@@ -1,0 +1,532 @@
+{
+  "images": [
+    {
+      "id": 0,
+      "name": "1.png",
+      "path": "images\\1.png",
+      "parentId": 0,
+      "text": "חוטיקארכקגרעאריוחטומינ טנהעג טאנגהכןךלמארצ  פםףכחהצךך גתץכעפקעםרלכצנ ארקםפאערךצה'פארף ארעו'4פםרלףך ה'אלגכ החןראךצקךל אלכהרחפאגכעך הרת",
+      "title": "מועדונית נותנים כח"
+    },
+    {
+      "id": 1,
+      "name": "2.png",
+      "path": "images\\2.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 2,
+      "name": "3.png",
+      "path": "images\\3.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 3,
+      "name": "4.png",
+      "path": "images\\4.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 4,
+      "name": "5.png",
+      "path": "images\\5.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 5,
+      "name": "6.png",
+      "path": "images\\6.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 6,
+      "name": "7.png",
+      "path": "images\\7.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 7,
+      "name": "8.png",
+      "path": "images\\8.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 8,
+      "name": "9.png",
+      "path": "images\\9.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 9,
+      "name": "10.png",
+      "path": "images\\10.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 10,
+      "name": "11.png",
+      "path": "images\\11.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 11,
+      "name": "12.png",
+      "path": "images\\12.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 12,
+      "name": "13.png",
+      "path": "images\\13.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 13,
+      "name": "14.png",
+      "path": "images\\14.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 14,
+      "name": "15.png",
+      "path": "images\\15.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 15,
+      "name": "16.png",
+      "path": "images\\16.png",
+      "parentId": 0,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 16,
+      "name": "IMG_8785_1.jpg",
+      "path": "images\\IMG_8785_1.jpg",
+      "parentId": 16,
+      "text": "אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר. \r\nהסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל הצופה לקרוא אוטומטית את הטקסט, ואם תוכן הטקסט לא רלוונטי לעבודה המוצגת - הדבר יסיח את דעתו מהעיצוב.",
+      "title": "מדירת קבלן לבית מלון"
+    },
+    {
+      "id": 17,
+      "name": "IMG_8791_1.jpg",
+      "path": "images\\IMG_8791_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 18,
+      "name": "IMG_8794_1.jpg",
+      "path": "images\\IMG_8794_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 19,
+      "name": "IMG_8800_1.jpg",
+      "path": "images\\IMG_8800_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 20,
+      "name": "IMG_8826_1.jpg",
+      "path": "images\\IMG_8826_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 21,
+      "name": "IMG_8833_1.jpg",
+      "path": "images\\IMG_8833_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 22,
+      "name": "IMG_8845_1.jpg",
+      "path": "images\\IMG_8845_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 23,
+      "name": "IMG_8851_1.jpg",
+      "path": "images\\IMG_8851_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 24,
+      "name": "IMG_8859_1.jpg",
+      "path": "images\\IMG_8859_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 25,
+      "name": "IMG_8862_1.jpg",
+      "path": "images\\IMG_8862_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 26,
+      "name": "IMG_8869_1.jpg",
+      "path": "images\\IMG_8869_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 27,
+      "name": "IMG_8875_1.jpg",
+      "path": "images\\IMG_8875_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 28,
+      "name": "IMG_8880_1.jpg",
+      "path": "images\\IMG_8880_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 29,
+      "name": "IMG_8883_1.jpg",
+      "path": "images\\IMG_8883_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 30,
+      "name": "IMG_8888_1.jpg",
+      "path": "images\\IMG_8888_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 31,
+      "name": "IMG_8890_1.jpg",
+      "path": "images\\IMG_8890_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 32,
+      "name": "IMG_8894_1.jpg",
+      "path": "images\\IMG_8894_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 33,
+      "name": "IMG_8899_1.jpg",
+      "path": "images\\IMG_8899_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 34,
+      "name": "IMG_8903_1.jpg",
+      "path": "images\\IMG_8903_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 35,
+      "name": "IMG_8904_1.jpg",
+      "path": "images\\IMG_8904_1.jpg",
+      "parentId": 16,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 36,
+      "name": "1j4a1403_optimized.jpg",
+      "path": "images\\1j4a1403_optimized.jpg",
+      "parentId": 36,
+      "text": "לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.",
+      "title": "גן מוזיקה"
+    },
+    {
+      "id": 37,
+      "name": "1j4a1405_optimized.jpg",
+      "path": "images\\1j4a1405_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 38,
+      "name": "1j4a1416_optimized.jpg",
+      "path": "images\\1j4a1416_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 39,
+      "name": "1j4a1420_optimized.jpg",
+      "path": "images\\1j4a1420_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 40,
+      "name": "1j4a1421_optimized.jpg",
+      "path": "images\\1j4a1421_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 41,
+      "name": "1j4a1422_optimized.jpg",
+      "path": "images\\1j4a1422_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 42,
+      "name": "1j4a1460_optimized.jpg",
+      "path": "images\\1j4a1460_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 43,
+      "name": "1j4a1465_optimized.jpg",
+      "path": "images\\1j4a1465_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 44,
+      "name": "1j4a1497_optimized.jpg",
+      "path": "images\\1j4a1497_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 45,
+      "name": "1j4a1499_optimized.jpg",
+      "path": "images\\1j4a1499_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 46,
+      "name": "1j4a1503_optimized.jpg",
+      "path": "images\\1j4a1503_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 47,
+      "name": "1j4a1504_optimized.jpg",
+      "path": "images\\1j4a1504_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 48,
+      "name": "1j4a1506_optimized.jpg",
+      "path": "images\\1j4a1506_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 49,
+      "name": "1j4a1507_optimized.jpg",
+      "path": "images\\1j4a1507_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 50,
+      "name": "1j4a1528_optimized.jpg",
+      "path": "images\\1j4a1528_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 51,
+      "name": "1j4a1551_optimized.jpg",
+      "path": "images\\1j4a1551_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 52,
+      "name": "1j4a1564_optimized.jpg",
+      "path": "images\\1j4a1564_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 53,
+      "name": "1j4a1566_optimized.jpg",
+      "path": "images\\1j4a1566_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 54,
+      "name": "1j4a1567_optimized.jpg",
+      "path": "images\\1j4a1567_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 55,
+      "name": "1j4a1573_optimized.jpg",
+      "path": "images\\1j4a1573_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 56,
+      "name": "1j4a1578_optimized.jpg",
+      "path": "images\\1j4a1578_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 57,
+      "name": "1j4a1584_optimized.jpg",
+      "path": "images\\1j4a1584_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 58,
+      "name": "1j4a1590_optimized.jpg",
+      "path": "images\\1j4a1590_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 59,
+      "name": "1j4a1592_optimized.jpg",
+      "path": "images\\1j4a1592_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 60,
+      "name": "1j4a1593_optimized.jpg",
+      "path": "images\\1j4a1593_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 61,
+      "name": "1j4a1599_optimized.jpg",
+      "path": "images\\1j4a1599_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 62,
+      "name": "1j4a1623_optimized.jpg",
+      "path": "images\\1j4a1623_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 63,
+      "name": "1j4a1649_optimized.jpg",
+      "path": "images\\1j4a1649_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 64,
+      "name": "1j4a1678_optimized.jpg",
+      "path": "images\\1j4a1678_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    },
+    {
+      "id": 65,
+      "name": "1j4a1680_optimized.jpg",
+      "path": "images\\1j4a1680_optimized.jpg",
+      "parentId": 36,
+      "text": "",
+      "title": ""
+    }
+  ]
+}
