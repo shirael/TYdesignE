@@ -193,7 +193,7 @@ const UploadProject = ({ id = null, onUploadSuccess }: UploadProjectProps) => {
 
     try {
      console.log("try to upload")
-      const response = await fetch('http://localhost:3000/upload', {
+      const response = await fetch('https://tydesigne-backend.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });

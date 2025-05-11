@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { GetParentImages } from "./Images";
 import Image from "./interface/image";
 
+
 // const Carousel=()=>
 // {
 //     const [currentIndex, setCurrentIndex] = useState(0); 
@@ -73,7 +74,7 @@ const Carousel = () => {
             <div className="carousel-item">
              
                 <img
-                    src={`http://localhost:3000/${images[currentIndex].path}`}
+                    src={`https://tydesigne-backend.onrender.com/${images[currentIndex].path}`}
                     alt={`Project ${currentIndex + 1}`}
                 />
 
