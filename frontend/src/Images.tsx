@@ -26,7 +26,7 @@
 //     }, []);
 //     return images;
 //   };
- 
+
 
 
 
@@ -105,12 +105,12 @@ import React, { useState, useEffect } from 'react';
 //     }, []);
 //     return images;
 //   };
- 
+
 import Image from "./interface/image";
 
- const GetParentImages = async (): Promise<Image[]> => {
+const GetParentImages = async (): Promise<Image[]> => {
   try {
-    const response = await fetch("https://tydesigne-backend.onrender.com/images/getParentImages");
+    const response = await fetch(`https://tydesigne-backend.onrender.com/images/getParentImages`);
     if (!response.ok) {
       throw new Error("Failed to fetch images");
     }
@@ -121,8 +121,8 @@ import Image from "./interface/image";
   }
 };
 
- const DeleteImage = async (id: number): Promise<boolean> => {
-  
+const DeleteImage = async (id: number): Promise<boolean> => {
+
   try {
     console.log(id)
     const response = await fetch(`https://tydesigne-backend.onrender.com/delete/${id}`, {
@@ -138,58 +138,100 @@ import Image from "./interface/image";
   }
 };
 
-
-
-const GetChildImages = (id: number | undefined, refreshKey: number) => {
+export const useChildImages = (id: number | undefined, refreshKey: number) => {
   const [images, setImages] = useState<Image[]>([]);
-  useEffect(() => {
-    if(id === undefined) return;
-      const fetchImages = async () => {
-        try {
-          const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data = await response.json();
-          setImages(data);
-        } catch (error) {
-          console.error("Error fetching images:", error);
-        }
-      };
-      fetchImages();
-    }, [id, refreshKey]);
-    return images;
-};
-const GetImage = (id: number ) => {
 
-  const [image, setImage] = useState<Image>();
   useEffect(() => {
-      const fetchImages = async () => {
-        try {
-          const response = await fetch(`https://tydesigne-backend.onrender.com/images/getImage/${id}`, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data = await response.json();
-          setImage(data);
-        } catch (error) {
-          console.error("Error fetching images:", error);
-        }
-      };
-      fetchImages();
-    }, [id]);
-    console.log(image)
-    return image;
+    if (id === undefined) return;
+
+    const fetchImages = async () => {
+      try {
+        const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        setImages(data);
+      } catch (error) {
+        console.error("Error fetching child images:", error);
+      }
+    };
+
+    fetchImages();
+  }, [id, refreshKey]);
+
+  return images;
 };
 
- export {GetParentImages,GetChildImages,DeleteImage,GetImage};
+// const GetChildImages = (id: number | undefined, refreshKey: number) => {
+//   const [images, setImages] = useState<Image[]>([]);
+//   useEffect(() => {
+//     if (id === undefined) return;
+//     const fetchImages = async () => {
+//       try {
+//         const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`, {
+//           method: "GET",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//         });
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         const data = await response.json();
+//         setImages(data);
+//       } catch (error) {
+//         console.error("Error fetching images:", error);
+//       }
+//     };
+//     fetchImages();
+//   }, [id, refreshKey]);
+//   return images;
+// };
+
+
+export const useImage = (id: number) => {
+  const [image, setImage] = useState<Image | undefined>();
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const response = await fetch(`https://tydesigne-backend.onrender.com/images/getImage/${id}`);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        setImage(data);
+      } catch (error) {
+        console.error("Error fetching image:", error);
+      }
+    };
+
+    if (id !== undefined) fetchImage();
+  }, [id]);
+
+  return image;
+};
+// const GetImage = (id: number) => {
+//   const [image, setImage] = useState<Image>();
+//   useEffect(() => {
+//     const fetchImages = async () => {
+//       try {
+//         const response = await fetch(`https://tydesigne-backend.onrender.com/images/getImage/${id}`, {
+//           method: "GET",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//         });
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         const data = await response.json();
+//         setImage(data);
+//       } catch (error) {
+//         console.error("Error fetching images:", error);
+//       }
+//     };
+//     fetchImages();
+//   }, [id]);
+//   console.log(image)
+//   return image;
+// };
+
+export { GetParentImages, DeleteImage };

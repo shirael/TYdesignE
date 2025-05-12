@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { GetChildImages, GetImage } from './Images';
+import { useChildImages, useImage } from './Images';
 import UploadPoject from './upload';
 import { useEffect, useCallback } from "react";
 import e from 'express';
+
 interface Image {
   id: number;
   path: string;
@@ -18,9 +19,11 @@ const PhotoGallery = () => {
     currentIndex: number | null;
   }>({ isOpen: false, currentIndex: null });
   const [refreshKey, setRefreshKey] = useState(0); // מפתח רענון
-  const { imageId } = useParams();
-  const images = GetChildImages(Number(imageId), refreshKey);
-  const mainImage = GetImage(Number(imageId));
+  const { imageId } = useParams<{ imageId: string }>();
+  const id = Number(imageId);
+  const childImages = useChildImages(id, refreshKey);  // משתמשים ב-hook של התמונות המשויכות
+  const mainImage = useImage(id);  // משתמשים ב-hook של התמונות הראשיות
+  // const mainImage = GetImage(Number(imageId)); אם לא עובד אז לשנות בסוגריים של היוז שלמעלה
   const [isZoomed, setIsZoomed] = useState(false);
 
   const toggleZoom = () => {
@@ -41,20 +44,20 @@ const PhotoGallery = () => {
       if (prev.currentIndex === null) return prev;
       return {
         ...prev,
-        currentIndex: (prev.currentIndex + 1) % images.length,
+        currentIndex: (prev.currentIndex + 1) % childImages.length,
       };
     });
-  }, [images.length]);
+  }, [childImages.length]);
 
   const showPrevImage = useCallback(() => {
     setLightbox((prev) => {
       if (prev.currentIndex === null) return prev;
       return {
         ...prev,
-        currentIndex: (prev.currentIndex - 1 + images.length) % images.length,
+        currentIndex: (prev.currentIndex - 1 + childImages.length) % childImages.length,
       };
     });
-  }, [images.length]);
+  }, [childImages.length]);
 
   const handleUploadSuccess = () => {
     setRefreshKey((prevKey) => prevKey + 1); // מעדכן את המפתח
@@ -78,8 +81,6 @@ const PhotoGallery = () => {
 
   return (
     <div>
-
-
       {shouldDisplayUpload && <UploadPoject id={imageId} onUploadSuccess={handleUploadSuccess} />}
       <div className="top-section">
         <img
@@ -101,7 +102,7 @@ const PhotoGallery = () => {
         </p>
       </div>
       <div className="gallery-container">
-        {images.map((image, index) => (
+        {childImages.map((image, index) => (
           <div
             key={image.id}
             className="gallery-item"
@@ -119,8 +120,8 @@ const PhotoGallery = () => {
         {lightbox.isOpen && lightbox.currentIndex !== null && (
           <div className="lightbox-overlay active" onClick={closeLightbox}>
             <img
-              src={`https://tydesigne-backend.onrender.com/${images[lightbox.currentIndex].path}`}
-              alt={images[lightbox.currentIndex].name}
+              src={`https://tydesigne-backend.onrender.com/${childImages[lightbox.currentIndex].path}`}
+              alt={childImages[lightbox.currentIndex].name}
               className="lightbox-image"
               onClick={(e) => e.stopPropagation()} // מונע סגירה כשבוחרים בתמונה עצמה
             />
