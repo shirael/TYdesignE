@@ -216,7 +216,7 @@ const FileUploadForm = () => {
     formData.append("message", message);
 
     try {
-      const response = await axios.post("http://localhost:3000/upload/send-email/", formData);
+      const response = await axios.post("https://tydesigne-backend.onrender.com/upload/send-email/", formData);
       alert("הטופס נשלח בהצלחה!");
       setName("");
       setPhone("");

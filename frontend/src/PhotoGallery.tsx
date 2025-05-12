@@ -83,7 +83,7 @@ const PhotoGallery = () => {
       {shouldDisplayUpload && <UploadPoject id={imageId} onUploadSuccess={handleUploadSuccess} />}
       <div className="top-section">
         <img
-          src={`http://localhost:3000/${mainImage?.path}`}
+          src={`https://tydesigne-backend.onrender.com/${mainImage?.path}`}
           alt={mainImage?.name}
           className="top-image" />
         <h1 className="top-text">{mainImage?.title}</h1>
@@ -108,7 +108,7 @@ const PhotoGallery = () => {
             onClick={() => openLightbox(index)}
           >
             <img
-              src={`http://localhost:3000/${image.path}`}
+              src={`https://tydesigne-backend.onrender.com/${image.path}`}
               alt={image.name}
               className="gallery-image"
             />
@@ -119,7 +119,7 @@ const PhotoGallery = () => {
         {lightbox.isOpen && lightbox.currentIndex !== null && (
           <div className="lightbox-overlay active" onClick={closeLightbox}>
             <img
-              src={`http://localhost:3000/${images[lightbox.currentIndex].path}`}
+              src={`https://tydesigne-backend.onrender.com/${images[lightbox.currentIndex].path}`}
               alt={images[lightbox.currentIndex].name}
               className="lightbox-image"
               onClick={(e) => e.stopPropagation()} // מונע סגירה כשבוחרים בתמונה עצמה
