@@ -146,6 +146,7 @@ const GetChildImages = (id: number | undefined, refreshKey: number) => {
     if (id === undefined) return;
     const fetchImages = async () => {
       try {
+        console.log("I am here");
         const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`, {
           method: "GET",
           headers: {
