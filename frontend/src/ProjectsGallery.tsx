@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GetParentImages, DeleteImage } from "./Images";
 import Image from "./interface/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
