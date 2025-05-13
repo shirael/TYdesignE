@@ -142,7 +142,6 @@ const DeleteImage = async (id: number): Promise<boolean> => {
 
 const GetChildImages = (id: number | undefined, refreshKey: number) => {
   const [images, setImages] = useState<Image[]>([]);
-  console.log("I am here");
   useEffect(() => {
     if (id === undefined) return;
     const fetchImages = async () => {
