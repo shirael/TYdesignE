@@ -142,11 +142,11 @@ const DeleteImage = async (id: number): Promise<boolean> => {
 
 const GetChildImages = (id: number | undefined, refreshKey: number) => {
   const [images, setImages] = useState<Image[]>([]);
+  console.log("I am here");
   useEffect(() => {
     if (id === undefined) return;
     const fetchImages = async () => {
       try {
-        console.log("I am here");
         const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`, {
           method: "GET",
           headers: {
