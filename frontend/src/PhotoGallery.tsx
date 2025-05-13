@@ -12,6 +12,7 @@ interface Image {
 }
 
 const PhotoGallery = () => {
+  console.log("I am here");
   const location = useLocation();
   const { url } = (location.state as { url: string }) || {}; // Type assertion for state
   const [lightbox, setLightbox] = useState<{
