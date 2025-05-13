@@ -62,7 +62,8 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
         >
           {images.map((image) => (
                       
-              <a href={`/PhotoGallery/${Number(image.id)}`} style={{ textDecoration: 'none' }}>
+              // <a href={`/PhotoGallery/${Number(image.id)}`} style={{ textDecoration: 'none' }}>
+              <Link to={`/PhotoGallery/${Number(image.id)}`} style={{ textDecoration: 'none' }}>
 
             <Box
               key={image.id}
@@ -187,7 +188,7 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
                 </Box>
               )}
             </Box>  
-                        </a>
+                        </Link>
 
           ))}
 
