@@ -1,86 +1,156 @@
-// import React, { useState, useEffect } from "react";
-// import {GetParentImages} from "./Images";
+import React, { useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { GetChildImages, GetImage } from './Images';
+import UploadPoject from './upload';
+import { useEffect, useCallback } from "react";
+import e from 'express';
 
-import { useEffect, useState } from "react";
-import { GetParentImages } from "./Images";
-import Image from "./interface/image";
+interface Image {
+  id: number;
+  path: string;
+  name: string;
+}
+
+const PhotoGallery = () => {
+  const location = useLocation();
+  const { url } = (location.state as { url: string }) || {}; // Type assertion for state
+  const [lightbox, setLightbox] = useState<{
+    isOpen: boolean;
+    currentIndex: number | null;
+  }>({ isOpen: false, currentIndex: null });
+  const [refreshKey, setRefreshKey] = useState(0); // מפתח רענון
+  const { imageId } = useParams();
+  const images = GetChildImages(Number(imageId), refreshKey);
+  const mainImage = GetImage(Number(imageId));
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const toggleZoom = () => {
+    setIsZoomed((prev) => !prev);
+  };
 
 
-// const Carousel=()=>
-// {
-//     const [currentIndex, setCurrentIndex] = useState(0); 
-//     const images = GetParentImages(); 
-//     const nextImage = () => {
-//         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); 
-//     };
+  const openLightbox = (index: number) => {
+    setLightbox({ isOpen: true, currentIndex: index });
+  };
 
-//     useEffect(() => {
-//         const intervalId = setInterval(nextImage, 3000); 
-//         return () => clearInterval(intervalId);
-//     }, [images]); 
-// return(
-// <div id="projects" className="carousel">
-// <div className="carousel-item">
-// <img src={`http://localhost:3000/${(images[currentIndex]).path}`} 
-// alt={`Project ${currentIndex + 1}`} />
-// </div>
-// </div>
-// )
-// }
-// export default Carousel
-const Carousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [images, setImages] = useState<Image[]>([]);
+  const closeLightbox = useCallback(() => {
+    setLightbox({ isOpen: false, currentIndex: null });
+  }, []);
 
+  const showNextImage = useCallback(() => {
+    setLightbox((prev) => {
+      if (prev.currentIndex === null) return prev;
+      return {
+        ...prev,
+        currentIndex: (prev.currentIndex + 1) % images.length,
+      };
+    });
+  }, [images.length]);
+
+  const showPrevImage = useCallback(() => {
+    setLightbox((prev) => {
+      if (prev.currentIndex === null) return prev;
+      return {
+        ...prev,
+        currentIndex: (prev.currentIndex - 1 + images.length) % images.length,
+      };
+    });
+  }, [images.length]);
+
+  const handleUploadSuccess = () => {
+    setRefreshKey((prevKey) => prevKey + 1); // מעדכן את המפתח
+  };
+  const shouldDisplayUpload = url === 'protected';
+
+  // שימוש בחיצי המקלדת
   useEffect(() => {
-     const fetchImages = async () => {
-       const fetchedImages = await GetParentImages();
-       setImages(fetchedImages);
-     };
-     fetchImages();
-   }, []);
- 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightbox.isOpen) return;
 
-
-    useEffect(() => {
-        const handleResize = () => {
-            setCurrentIndex(0); // Reset index on resize if needed
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-
-
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % (images.length || 1)); // Avoid division by zero
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNextImage();
+      if (e.key === "ArrowLeft") showPrevImage();
     };
 
-    useEffect(() => {
-        if (images.length > 0) {
-            const intervalId = setInterval(nextImage, 3000);
-            return () => clearInterval(intervalId);
-        }
-    }, [images]);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox.isOpen, showNextImage, showPrevImage]);
 
-    if (images.length === 0) {
-        return <div>Loading images...</div>;
-    }
 
-    return (
-        <div className="main-container">
-        <div id="projects" className="carousel">
-            <div className="carousel-item">
-             
-                <img
-                    src={`https://tydesigne-backend.onrender.com/${images[currentIndex].path}`}
-                    alt={`Project ${currentIndex + 1}`}
-                />
+  return (
+    <div>
 
-            </div>
-        </div></div>
-    );
+
+      {shouldDisplayUpload && <UploadPoject id={imageId} onUploadSuccess={handleUploadSuccess} />}
+      <div className="top-section">
+        <img
+          src={`https://tydesigne-backend.onrender.com/${mainImage?.path}`}
+          alt={mainImage?.name}
+          className="top-image" />
+        <h1 className="top-text">{mainImage?.title}</h1>
+        <p style={{
+          fontSize: "18px",
+          fontFamily: "Arial, sans-serif",
+          textAlign: "center",
+          lineHeight: "1.6",
+          maxWidth: "600px",
+          margin: "20px auto",
+          color: "white",
+          whiteSpace: "pre-line"
+        }}>
+          {mainImage?.text}
+        </p>
+      </div>
+      <div className="gallery-container">
+        {images.map((image, index) => (
+          <div
+            key={image.id}
+            className="gallery-item"
+            onClick={() => openLightbox(index)}
+          >
+            <img
+              src={`https://tydesigne-backend.onrender.com/${image.path}`}
+              alt={image.name}
+              className="gallery-image"
+            />
+          </div>
+        ))}
+
+        {/* Lightbox Overlay */}
+        {lightbox.isOpen && lightbox.currentIndex !== null && (
+          <div className="lightbox-overlay active" onClick={closeLightbox}>
+            <img
+              src={`https://tydesigne-backend.onrender.com/${images[lightbox.currentIndex].path}`}
+              alt={images[lightbox.currentIndex].name}
+              className="lightbox-image"
+              onClick={(e) => e.stopPropagation()} // מונע סגירה כשבוחרים בתמונה עצמה
+            />
+            <button className="lightbox-close" onClick={closeLightbox}>
+              ✕
+            </button>
+            {/* <button className="lightbox-zoom" onClick={(e) => {
+            e.stopPropagation(); //כדי לא לסגור את הלייטבוקס בטעות
+            setIsZoomed((prev) => !prev); //Toggle
+          }}
+          >
+            🔍
+          </button> */}
+            <button className="lightbox-prev" onClick={(e) => {
+              e.stopPropagation();
+              showPrevImage();
+            }}>
+              ‹
+            </button>
+            <button className="lightbox-next" onClick={(e) => {
+              e.stopPropagation();
+              showNextImage();
+            }}>
+              ›
+            </button>
+          </div>
+        )}
+      </div></div>
+  );
 };
 
-export default Carousel;
+export default PhotoGallery;
