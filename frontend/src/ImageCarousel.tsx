@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { GetParentImages } from "./Images";
 import Image from "./interface/image";
 
-
 // const Carousel=()=>
 // {
 //     const [currentIndex, setCurrentIndex] = useState(0); 
@@ -70,16 +69,54 @@ const Carousel = () => {
 
     return (
         <div className="main-container">
-        <div id="projects" className="carousel">
-            <div className="carousel-item">
-             
-                <img
-                    src={`https://tydesigne-backend.onrender.com/${images[currentIndex].path}`}
-                    alt={`Project ${currentIndex + 1}`}
-                />
+   
+  <div className="carousel">
+    
+    <div className="carousel-link">
+          <div className="text-block">
+  <p>
+    שטח נדל"ני בישראל, זו אחת ההשקעות היקרות יותר.<br />
+    עיצוב פנים זהיר ימצא לכם מטרים עודפים או יתן אשליית מרחבים.<br />
+    עיצוב פנים חובבני עלול לקחת את החלל היקר שלכם,<br />
+    ולהפסיד לכם נתחים ממנו.
+  </p>
+  <p>
+    זו הסיבה שבאתם לכאן.<br />
+    כדי למצוא עיצוב פנים חכם שאכפת לו מכל ס"מ שהשקעתם<br />
+    ותוכלו לסמוך עליו בעיניים עצומות.
+  </p>
+  <a className="link-in-carousel" href="https://example.com">
+    יש לך שטח מסחרי שחייב ליצור חווית קניה ולמגנט לקוחות?
+  </a>
+  <a className="link-in-carousel" href="https://example.com">
+    רכשתם דירה ואתם חולמים על בית רחב מהמגזינים?
+  </a>
+  <p>
+    חכם שבאתם לכאן!<br />
+    מוזמנים &gt;&gt;&gt;
+  </p>
+</div>
 
-            </div>
-        </div></div>
+ 
+       {/* <a className="link-in-carousel" href="https://example.com">
+יש לך שטח מסחרי שחייב ליצור חווית קניה ולמגנט לקוחות?
+      </a>
+        <a className="link-in-carousel" href="https://example.com">
+רכשתם דירה ואתם חולמים על בית רחב מהמגזינים?
+      </a> */}
+      
+    </div>
+
+    <div className="carousel-img">
+      <img
+        src={`http://localhost:3000/${images[currentIndex].path}`}
+        alt={`Project ${currentIndex + 1}`}
+      /> 
+       </div>
+      
+
+</div>
+</div>
     );
 };
 
