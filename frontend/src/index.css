@@ -524,69 +524,82 @@ img {
   }
 }
 
-/* עיצוב עבור About Section */
+
+
+
+
+
+/* .about-container {
+  direction: rtl;
+  background-color: #fff8f5;
+  padding: 2rem 1rem;
+} */
+
 .about-section {
-  border: 10px solid black;
-  display: flex;
-  align-items: center; /* מיישר את התוכן במרכז האנך */
-  justify-content: space-between; /* יוצר רווחים שווים בין התמונה והכיתוב */
-  padding: 20px;
-  background-color:black;
-  border-radius: 8px;
-  /* box-shadow: 0px 4px 8px rgba(225, 225, 225, 0.8); */
+  text-align: center;
+  margin: auto;
+  max-width: 700px;
+  padding: 2rem;
 }
 
-.about-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* יוצר רווח שווה בין התמונה והכיתוב */
-}
-.about-section .about-text {
-  flex: 1;
-  padding: 10px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: white;
-}
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #b56e55;
 
-.about-section .about-image {
-  flex: 0 0 60%; /* התמונה תיקח עד 40% מהמרחב */
-  max-width: 100%;
+}
+.about-text  {
+  font-size: 1.5rem;
+  line-height:1.5;
 
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 1.5rem;  */
+ white-space: pre-wrap;
+  direction: rtl;
+  font-family: inherit;
 }
 
+.beliefs-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem 1rem;
+  direction: rtl;
+  font-family: 'Heebo', sans-serif;
+  /* background-color: #1bb52a; */
+  max-width: 1000px;
+  margin: auto;
+}
 
-
-@media (max-width: 768px) {
-  .about-section {
-    flex-direction: column; /* עובר לעיצוב אנכי ברוחב מסך קטן */
-    text-align: center;
-  }
-
-  .about-section .about-image {
-    width: 80%; /* מצמצם את רוחב התמונה */
-    margin-bottom: 20px;
-  }
-
-  .about-section .about-text {
-    padding: 10px;
+@media (max-width: 767px) {
+  .beliefs-section {
+    grid-template-columns: 1fr;
   }
 }
 
+.belief-card {
+  background-color: #ffffff;
+  border: 1px solid #f0ddd4;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
 
+.belief-card:hover {
+  transform: translateY(-5px);
+}
 
+.belief-card h3 {
+  font-size: 1.4rem;
+  color: #b56e55;
+  margin-bottom: 1rem;
+}
 
-
-
-
-
-
-
-
-
+.belief-card p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+}
 
 
 
@@ -725,40 +738,86 @@ img {
 
 
 /* Carousel container */
+.carousel
+{
+display:flex;
+width: 100%;
+height: 100vh;
+ }
 
-.carousel {
-  
-  border: 1px solid white; /* Border on all sides */
-
-  width:100%; /* Reduced width (adjust as needed) */
-  height: calc(100vh - 60px); /* Full height minus navbar height */
-  overflow: hidden; /* Hide anything outside the container */
-  position: relative; /* Positioning for child elements like indicators or navigation buttons */
-  margin: 0 auto; /* Centers the carousel horizontally */
-}
 
 
 /* Carousel item */
-.carousel-item {
+.carousel-img {
   width: 100%;
   height: 100%;
-  position: absolute;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
 }
 
 /* Carousel image */
-.carousel-item img {
+.carousel-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;  /* Ensures the image covers the container without stretching */
 }
 
+.carousel-link {
+  width: 48%;
+  background-color: black; /* רקע כהה כדי לראות בבירור */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    flex-direction: column; /* תגרום לקישורים להיות אחד מתחת לשני */
+
+}
 
 
+
+.text-block {
+    padding-right: 2%;
+    /* padding-left: 1%; */
+
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: white;
+  letter-spacing: 0.5px;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  a.link-in-carousel {
+    display: inline-block; /* נותן לו להיות חלק מהטקסט */
+    color: white;
+    text-decoration: underline; /* מוסיף קו תחתי */
+    padding: 0.5rem 1rem;
+    margin: 0.75rem 0;
+    font-size: 1.05rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* הנפשה חלה על הצבע והקו התחתי */
+
+    &:hover {
+      color: red;
+      text-decoration: underline; /* קו תחתי גלי בצבע אדום */
+    }
+  }
+}
+
+
+
+
+
+
+
+/* .link-in-carousel {
+  display: block;  color: white;
+  padding: 12px 24px;
+  font-size: 15px;
+  text-decoration: none;
+  margin-bottom: 10px; 
+  width: 100%; 
+}  */
 
 
 
@@ -926,6 +985,7 @@ align-items: center;
 
 .projectGallery ,.about,.form-container
 {
+  
   border-top: 3px solid white; 
   width: 80%;
    margin: 80px auto 100px; 
@@ -994,3 +1054,9 @@ align-items: center;
     justify-content: flex-start;
   }
 }
+
+
+
+
+
+
