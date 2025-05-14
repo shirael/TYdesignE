@@ -95,7 +95,7 @@ const PhotoGallery = () => {
           lineHeight: "1.6",
           maxWidth: "600px",
           margin: "20px auto",
-          color: "#333",
+          color: "white",
           whiteSpace: "pre-line"
         }}>
           {mainImage?.text}
