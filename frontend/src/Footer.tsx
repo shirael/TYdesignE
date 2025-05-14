@@ -7,11 +7,11 @@ const Footer: React.FC = () => {
     <div className="footer-container">
       <footer className="footer">
         {/* Left Section: Copyright */}
+   <Typography variant="body2" className="footer-text">
+        תמר ויעל&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;אדריכלות // עיצוב פנים // סטיילינג
+     </Typography>
         <Typography variant="body2" className="footer-text">
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
-        </Typography>
-        <Typography variant="body2" className="footer-text">
-          tydesign4u@gmail.com
+          ty.design4u@gmail.com&nbsp;&nbsp;|&nbsp;&nbsp;058-3229251&nbsp;&nbsp;|&nbsp;&nbsp;050-4188706
         </Typography>
 
         {/* Right Section: Links */}
