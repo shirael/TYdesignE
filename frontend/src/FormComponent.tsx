@@ -228,41 +228,50 @@ const FileUploadForm = () => {
       setIsSubmitting(false);
     }
   };
-  const words = ["משרד", "בית", "חדר"];
-  const [word, setWord] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
-  
+  const words = ["סלון","מטבח", "חנות","משרד", "בית", "חדר"];
+const [word, setWord] = useState("");
+const [currentIndex, setCurrentIndex] = useState(0);
+const [currentCharIndex, setCurrentCharIndex] = useState(0);
+const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleting
+
   useEffect(() => {
-    if (!isTyping) return; // Prevent restarting when not needed
-  
-    const currentWord = words[currentIndex];
-  
-    // Typing animation
+  const currentWord = words[currentIndex];
+
+  // שלב כתיבה
+  if (isTyping) {
     if (currentCharIndex < currentWord.length) {
-      const typingInterval = setTimeout(() => {
+      const typingTimeout = setTimeout(() => {
         setWord((prev) => prev + currentWord[currentCharIndex]);
         setCurrentCharIndex((prev) => prev + 1);
-      }, 150); // Adjust speed as needed
-  
-      return () => clearTimeout(typingInterval);
+      }, 150);
+
+      return () => clearTimeout(typingTimeout);
     } else {
-      // Wait before deleting
-      setTimeout(() => {
-        setWord(""); // Clear the word
-        setCurrentCharIndex(0); // Reset typing index
-        setCurrentIndex((prev) => (prev + 1) % words.length); // Move to next word
-      }, 2000); // Pause before deleting
+      // אחרי שסיים להקליד – המתנה ואז עובר למחיקה
+      const pauseTimeout = setTimeout(() => {
+        setIsTyping(false); // מעבר לשלב מחיקה
+      }, 2000);
+
+      return () => clearTimeout(pauseTimeout);
     }
-  }, [currentCharIndex, isTyping, currentIndex]);
-  
-  useEffect(() => {
-    if (word === "") {
-      setIsTyping(true); // Restart typing animation
+  } 
+  // שלב מחיקה
+  else {
+    if (currentCharIndex > 0) {
+      const deletingTimeout = setTimeout(() => {
+        setWord((prev) => prev.slice(0, -1)); // מוחק אות אחרונה
+        setCurrentCharIndex((prev) => prev - 1);
+      }, 100);
+
+      return () => clearTimeout(deletingTimeout);
+    } else {
+      // סיים למחוק → למילה הבאה
+      setIsTyping(true);
+      setCurrentIndex((prev) => (prev + 1) % words.length);
     }
-  }, [word]);
-  
+  }
+}, [currentCharIndex, isTyping, currentIndex]);
+
 
   return (
 
