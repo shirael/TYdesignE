@@ -279,6 +279,7 @@ const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleti
     
     <div className="main-container">
       <div className="form-container">
+     <div className="all-form"> 
       <div className="form">
       {/* <p className="form-text">{sentence}</p> */}
  
@@ -417,7 +418,7 @@ const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleti
     </div>
     </div>
     
-    // </div>
+     </div>
   );
 };
 
