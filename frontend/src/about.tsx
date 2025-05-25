@@ -29,8 +29,8 @@ const AboutSection: React.FC = () => {
       <div className="about">
         <section id="about" className="about-section">
           <div className="about-text">
-            <h2>נעים מאד</h2>
-            <h2>וברכות על הצעד!<br /><br /></h2>
+            <h2 className="mixed-text ">נעים מאד</h2>
+            <h2 className="mixed-text ">וברכות על הצעד!<br /><br /></h2>
             <pre className="about-text">{text}</pre>
           </div>
         </section>
