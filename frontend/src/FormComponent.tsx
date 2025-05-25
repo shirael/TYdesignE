@@ -412,7 +412,7 @@ const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleti
   
 
     <div className="form-image">
-    <img src="/חתימה.jpg" alt="המעצבת" />
+    <img src="לוגו עם טלפון-01.png" alt="המעצבת" />
     </div>
 
     </div>
