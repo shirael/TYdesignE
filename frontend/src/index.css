@@ -6,10 +6,22 @@
 
 }
 
-body { direction: rtl; /* הכוונה לשמאל לימין */
-  font-family: Arial, sans-serif;
-  background-color:#1c2631;
+/* body { 
+  direction: rtl; 
+  font-family: Arial, sans-serif; 
+  background-color:#1c3128;
+  
   color:#e8e5e2;
+} */
+body { 
+  direction: rtl;
+  font-family: Arial, sans-serif;
+
+  background: url('../public/body.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  /* שימי לב: לא שמים background-color כאן */
+  color: #e8e5e2;
 }
 
 .container {
@@ -219,7 +231,7 @@ img {
 /*  */
 /* navbar  */
 .navbar {
-  background-color:#1c2631;
+  background: url('../public/body.jpg') no-repeat center center fixed;
   padding: 30px 33px;
   display: flex;
   justify-content: space-between;
@@ -335,7 +347,8 @@ img {
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #b56e55;
+
+  /* color: #9e695e; */
 
 }
 .about-text  {
@@ -403,18 +416,21 @@ img {
 
 
 .form-container {
-  /* border: 10px solid black; */
-  display: flex;
-  align-items: center; /* מיישר את התוכן במרכז האנך */
-  justify-content: space-between; /* יוצר רווחים שווים בין התמונה והכיתוב */
+  /*   */
+}
+.all-form
+{
+display: flex;
+  align-items: center; 
   padding: 20px;
-  /* background-color:black; */
+
 
   width: 100%;
   display: flex;
-  justify-content: space-between; /* יוצר רווח שווה בין התמונה והכיתוב */
+  justify-content: space-between;
 }
 .form {
+  
   flex: 1;
   /* padding: 10px; */
   font-size: 18px;
@@ -788,17 +804,27 @@ align-items: center;
 
 
 
-.projectGallery ,.about,.form-container
-{
-  
-  border-top: 3px solid red; 
-  width: 80%;
-   margin: 80px auto 100px; 
+ .projectGallery::before,
+.about::before,
+.form-container::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: url('../public/COLOR.jpg') center/cover no-repeat;
+  margin-bottom: 20px; /* Optional spacing */
 }
 
 
 
 
+
+.projectGallery ,.about,.form-container
+{
+  
+  /* border-top: 3px solid #9e695e;  */
+  width: 80%;
+   margin: 80px auto 100px; 
+}
 
 
 
@@ -813,7 +839,8 @@ align-items: center;
 
 .footer {
   /* color: rgb(217, 69, 69) !important; */
-border-top:5px solid #9e695e ;
+/* border-top:8px solid #9e695e ; */
+  position: relative;
 
   background-color:#e8e5e2;
   color: #1c2631 ;
@@ -825,6 +852,15 @@ border-top:5px solid #9e695e ;
   align-items: center;
 }
 
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: url('../public/COLOR.jpg') center/cover no-repeat;
+}
 .footer-text {
   font-size: 1.1rem !important;
 }
@@ -863,6 +899,19 @@ border-top:5px solid #9e695e ;
 
 
 
-
-
-
+.mixed-text {
+  background: url('../public/COLOR.jpg'); /* Image with the mix of colors */
+  background-size: cover;
+   background-clip: text;            /* Standard */
+  -webkit-background-clip: text;    /* Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+}
+.background {
+  background: url('../public/body.jpg'); /* Image with the mix of colors */
+  background-size: cover;
+   background-clip: text;            /* Standard */
+  -webkit-background-clip: text;    /* Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+}
