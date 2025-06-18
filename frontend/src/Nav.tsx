@@ -64,7 +64,7 @@ const NavBar: React.FC = () => {
         <li onClick={() => handleImageClick("FileUploadForm")}>צור קשר</li> */}
         </ul>
         <div className="logo" onClick={() => handleNavigation("")}>
-          TYDESIGN
+          TY.DESIGN
         </div>
       </nav>
     </div>

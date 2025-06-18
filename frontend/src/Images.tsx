@@ -110,7 +110,7 @@ import Image from "./interface/image";
 
 const GetParentImages = async (): Promise<Image[]> => {
   try {
-    const response = await fetch(`https://tydesigne-backend.onrender.com/images/getParentImages`);
+    const response = await fetch(`http://localhost:3000/images/getParentImages`);
     if (!response.ok) {
       throw new Error("Failed to fetch images");
     }
@@ -125,7 +125,7 @@ const DeleteImage = async (id: number): Promise<boolean> => {
 
   try {
     console.log(id)
-    const response = await fetch(`https://tydesigne-backend.onrender.com/delete/${id}`, {
+    const response = await fetch(`http://localhost:3000/delete/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const GetChildImages = (id: number | undefined, refreshKey: number) => {
     if (id === undefined) return;
     const fetchImages = async () => {
       try {
-        const response = await fetch(`https://tydesigne-backend.onrender.com/images/getChildImages/${id}`, {
+        const response = await fetch(`http://localhost:3000/images/getChildImages/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -171,7 +171,7 @@ const GetImage = (id: number) => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(`https://tydesigne-backend.onrender.com/images/getImage/${id}`, {
+        const response = await fetch(`http://localhost:3000/images/getImage/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

@@ -97,7 +97,7 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
             >
               <Box
                 component="img"
-                src={`https://tydesigne-backend.onrender.com/${image.path}`}
+                src={`http://localhost:3000/${image.path}`}
                 alt={image.name}
                 sx={{
                   width: "100%",
@@ -121,7 +121,7 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
                   width: "100%",
                   height: "100%",
                   backgroundColor: "rgba(0, 0, 0, 0)",
-                  transition: "background-color 2.5s ease",
+                  transition: "background-color 1.5s ease",
                   // "&:hover": {
                   //   transform: "scale(1.9)",
                   // },
@@ -143,7 +143,7 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
                   textAlign: "center",  // Center align the text
                   visibility: "hidden", // Initially hidden (before hover)
                   opacity: 0,           // Initially transparent (before hover)
-                  transition: "visibility 2s, opacity 2s ease-in-out", // Fade-in effect for visibility
+                  transition: "visibility 1s, opacity 1s ease-in-out", // Fade-in effect for visibility
                 }}             
 
               >

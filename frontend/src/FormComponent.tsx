@@ -161,13 +161,40 @@
 
 
 // export default FileUploadForm;
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TextField from '@mui/material/TextField';
 import {  Button, Box, Typography } from "@mui/material";
 import axios from "axios";
 import "./index.css";
 
 const FileUploadForm = () => {
+
+
+
+const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+
+    if (!videoEl) return;
+
+    const observer = new IntersectionObserver(
+       ([entry]) => {
+        if (entry.isIntersecting) {
+          videoEl.pause();         // עוצר אותו אם נתקע
+          videoEl.currentTime = 0; // מחזיר להתחלה מיד
+          videoEl.play();          // מנגן מיד
+        } else {
+          videoEl.pause();
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(videoEl);
+
+    return () => observer.disconnect();
+  }, []);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -216,7 +243,7 @@ const FileUploadForm = () => {
     formData.append("message", message);
 
     try {
-      const response = await axios.post("https://tydesigne-backend.onrender.com/upload/send-email/", formData);
+      const response = await axios.post("http://localhost:3000/upload/send-email/", formData);
       alert("הטופס נשלח בהצלחה!");
       setName("");
       setPhone("");
@@ -278,8 +305,9 @@ const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleti
 
     
     <div className="main-container">
-      <div className="form-container">
+          <div className="form-container">
      <div className="all-form"> 
+   
       <div className="form">
       {/* <p className="form-text">{sentence}</p> */}
  
@@ -409,16 +437,17 @@ const [isTyping, setIsTyping] = useState(true); // true = typing, false = deleti
       </Box>
     </Box>
     </div>
-  
-
-    <div className="form-image">
-    <img src="לוגו עם טלפון-01.png" alt="המעצבת" />
+   <div className="form-image">
+    <video 
+  ref={videoRef}
+      src="istockphoto-1161409647-640_adpp_is.mp4"
+      muted
+      className="no-click">
+</video>
     </div>
-
     </div>
     </div>
-    
-     </div>
+       </div> 
   );
 };
 
