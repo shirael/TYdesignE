@@ -97,7 +97,8 @@ const Gallery: React.FC<GalleryProps> = ({ myurl }) => {
             >
               <Box
                 component="img"
-                src={`http://localhost:3000/${image.path}`}
+
+                src={`https://tydesigne-backend.onrender.com/${image.path}`}
                 alt={image.name}
                 sx={{
                   width: "100%",

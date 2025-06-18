@@ -137,8 +137,7 @@ const Carousel = () => {
 
         <div className="carousel-img">
           <img
-            src={`http://localhost:3000/${images[currentIndex].path}`}
-            alt={`Project ${currentIndex + 1}`}
+   src={`https://tydesigne-backend.onrender.com/${images[currentIndex].path}`}            alt={`Project ${currentIndex + 1}`}
           />
           <div className="wrap-text">
     <div className="text">
