@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 // Enable CORS for the specified frontend origin
 app.use(cors({
-  origin: 'https://tydesigne-frontend.onrender.com', // Adjust to match your frontend origin
+  origin: 'http://localhost:3001', // Adjust to match your frontend origin
 }));
 // Serve static images from the 'images' directory
 // app.use('/images', express.static(path.join(__dirname, 'images')));
@@ -47,6 +47,6 @@ app.delete('/delete/:id', imageController.deleteImage)
 // app.get('/images/:imageName', imageController.getImage);
 // Start the server
 app.listen(3000, () => {
-  console.log('Server running on https://tydesigne-backend.onrender.com/');
+  console.log('Server running on http://localhost:3000');
 });
 
